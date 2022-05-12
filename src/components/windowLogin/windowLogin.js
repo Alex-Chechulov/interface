@@ -19,9 +19,11 @@ class WindowLogin extends React.Component{
     // alert('login: ' + this.state.login);
     // alert('password: ' + this.state.password);
 
-  if (this.state.login=="admin"&&this.state.password=="admin"){
+  // if (this.state.login=="admin"&&this.state.password=="admin"){
+    if(localStorage.getItem(this.state.login)==this.state.password){
     this.setState({errorClass: 'login-error-input login-error-hidden'});
     alert('Login sucsess!');
+    // localStorage.clear();
   }  else {
     this.setState({errorClass: 'login-error-input'});
   }

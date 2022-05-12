@@ -3,11 +3,14 @@ import './windowRegistration.css';
 class WindowRegistration extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {login: '', password: '', errorClass: 'registration-error-input registration-error-hidden'};
+    this.state = {login: '', password: '', confirmPassword: '', errorClass: 'registration-error-input registration-error-hidden'};
 
+    this.confirmPasswordChange = this.confirmPasswordChange.bind(this);
     this.passwordChange = this.passwordChange.bind(this);
     this.loginChange = this.loginChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.userData=[{login:'admin', password:'admin'}];
   }
   loginChange(event) {
     this.setState({login: event.target.value});
@@ -15,10 +18,15 @@ class WindowRegistration extends React.Component{
   passwordChange(event) {
     this.setState({password: event.target.value});
   }
+  confirmPasswordChange(event) {
+    this.setState({confirmPassword: event.target.value});
+  }
   handleSubmit(event) {
-  if (this.state.login=="admin"&&this.state.password=="admin"){
+  if (this.state.confirmPassword==this.state.password){
     this.setState({errorClass: 'registration-error-input registration-error-hidden'});
-    alert('Login sucsess!');
+    alert('Registration sucsess!');
+
+    localStorage.setItem(this.state.login, this.state.password);
   }  else {
     this.setState({errorClass: 'registration-error-input'});
   }
@@ -45,16 +53,16 @@ class WindowRegistration extends React.Component{
         onChange={this.passwordChange}/>
     <input
         type="password"
-        value={this.state.password}
+        value={this.state.confirmPasswordChange}
         name="сonfirm password"
         placeholder="Confirm password"
         className="input-password"
-        onChange={this.passwordChange}/>
+        onChange={this.confirmPasswordChange}/>
     <label>
-    <p className={this.state.errorClass}>Incorrect username or password</p>
+    <p className={this.state.errorClass}>Passwords do not match</p>
     <a className="authorization-link" href="javascript:history.go(-1)">Authorization</a>
     </label>
-    <button type="submit" className="registration-button">Log in</button>
+    <button type="submit" className="registration-button">Registration</button>
 </form>
 </div>
     );
