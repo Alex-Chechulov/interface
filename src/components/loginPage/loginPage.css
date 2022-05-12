@@ -1,0 +1,5 @@
+.login-main {/*фон*/
+  background: white url("../../../public/background.svg") no-repeat;
+  min-height: 100vh;
+background-size: cover;
+}
