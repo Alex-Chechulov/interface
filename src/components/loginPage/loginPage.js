@@ -9,8 +9,8 @@ class LogInPage extends React.Component{
     return (
 <div className="login-main">
 <Header />
-<WindowLogin />
 <AdditInfo />
+<WindowLogin />
 </div>
     );
   }

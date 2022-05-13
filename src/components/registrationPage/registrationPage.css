@@ -1,5 +1,6 @@
 .registration-main {/*фон*/
   background: white url("../../../public/background.svg") no-repeat;
   min-height: 100vh;
+  min-width: 400px;
 background-size: cover;
 }

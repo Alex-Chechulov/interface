@@ -55,7 +55,7 @@ class WindowRegistration extends React.Component{
         type="password"
         value={this.state.confirmPasswordChange}
         name="сonfirm password"
-        placeholder="Confirm password"
+        placeholder="Confirm"
         className="input-password"
         onChange={this.confirmPasswordChange}/>
     <label>

@@ -1,9 +1,10 @@
 .registration-window {/*окно*/
   text-align: center;
-  width: 470px;
+  width: 430px;
   height: 700px;
   padding: 1% 2% 3% 2%;
-  margin: 100px 0% 100px 33%;
+  margin-top: 100px;
+  margin-left: 32%;
   background: #B4F5F9;
   border-radius: 17.4667px;
   display: inline-block;
@@ -84,4 +85,17 @@
 .login-button:active{/*нажатие кнопки*/
   top:2px;
   box-shadow: 0 3px 0px #3c354a;
+}
+@media screen and (max-width: 950px){/*настройка для отображения на тетефоне*/
+  .registration-window {/*окно*/
+    padding:0;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 350px;
+    height: 700px;
+  }
+  .registration-button{/*кнопка логина*/
+  font-size: 40px;
+  }
 }

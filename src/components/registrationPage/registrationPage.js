@@ -9,8 +9,8 @@ class RegistrationPage extends React.Component{
     return (
 <div className="registration-main">
 <Header />
-<WindowRegistration />
 <AdditInfo />
+<WindowRegistration />
 </div>
     );
   }
