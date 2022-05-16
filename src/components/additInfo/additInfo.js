@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import "./additInfo.css";
+
 class AdditInfo extends React.Component{
   constructor(props) {
   super(props);
@@ -28,6 +29,7 @@ timeInUTC(){
   if (UTCsecond<10) UTCsecond = "0" + UTCsecond;
   return UTChour + ":" + UTCminute+ ":" + UTCsecond;
 }
+
   render() {
     return (
 <div className="main-addit">
@@ -46,7 +48,7 @@ timeInUTC(){
       <h2 className="clock">
       EN
       <label class="switch">
-        <input type="checkbox"/>
+        <input type="checkbox" onChange={this.props.handleChange} checked={this.props.check}/>
         <span class="slider round"/>
       </label>
       RU

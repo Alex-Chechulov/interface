@@ -54,6 +54,7 @@ class WindowLogin extends React.Component{
     </label>
     <button type="submit" className="login-button">Log in</button>
 </form>
+<p>{String(this.props.check)}</p>
 </div>
     );
   }

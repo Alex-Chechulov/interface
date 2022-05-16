@@ -64,6 +64,7 @@ class WindowRegistration extends React.Component{
     </label>
     <button type="submit" className="registration-button">Registration</button>
 </form>
+<p>{String(this.props.check)}</p>
 </div>
     );
   }

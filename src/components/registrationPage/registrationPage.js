@@ -9,8 +9,9 @@ class RegistrationPage extends React.Component{
     return (
 <div className="registration-main">
 <Header />
-<AdditInfo />
-<WindowRegistration />
+<AdditInfo check={this.props.check}
+handleChange={this.props.handleChange}/>
+<WindowRegistration check={this.props.check}/>
 </div>
     );
   }
