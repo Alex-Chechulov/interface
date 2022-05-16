@@ -8,7 +8,6 @@ import {  BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 
 class App extends React.Component{
-
   constructor(props){
     super(props);
     this.state = {
@@ -16,18 +15,25 @@ class App extends React.Component{
     };
     this.handleChange = this.handleChange.bind(this);
     console.log('constructor '+ this.state.check);
+    if(sessionStorage.getItem('check')==null)
+    sessionStorage.setItem('check', '');
   }
   handleChange(event){
-    console.log('handleChange '+ event.target.checked);
-    if(event.target.checked==true){
-    this.setState({
-      check:true
-    });
-  }
-    else {
-    this.setState({
-      check:false
-    });
+  //   console.log('handleChange '+ event.target.checked);
+  //   if(event.target.checked==true){
+  //   this.setState({
+  //     check:true
+  //   });
+  // }
+  //   else {
+  //   this.setState({
+  //     check:false
+  //   });
+  // }
+  if(event.target.checked==true){
+    sessionStorage.setItem('check', 'true');
+  } else {
+    sessionStorage.setItem('check', '');
   }
   }
   render() {

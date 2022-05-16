@@ -48,7 +48,7 @@ timeInUTC(){
       <h2 className="clock">
       EN
       <label class="switch">
-        <input type="checkbox" onChange={this.props.handleChange} checked={this.props.check}/>
+        <input type="checkbox" onChange={this.props.handleChange} checked={Boolean(sessionStorage.getItem('check'))}/>
         <span class="slider round"/>
       </label>
       RU
