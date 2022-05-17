@@ -9,9 +9,9 @@ class RegistrationPage extends React.Component{
     return (
 <div className="registration-main">
 <Header />
-<AdditInfo check={this.props.check}
+<AdditInfo activeLanguage={this.props.activeLanguage}
 handleChange={this.props.handleChange}/>
-<WindowRegistration check={this.props.check}/>
+<WindowRegistration activeLanguage={this.props.activeLanguage}/>
 </div>
     );
   }

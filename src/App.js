@@ -5,18 +5,31 @@ import LogInPage from "./components/loginPage/loginPage";
 import RegistrationPage from "./components/registrationPage/registrationPage";
 
 import {  BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-
+import Dictionary from "./dictionary";
 
 class App extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      check :false
-    };
+    // this.state = {
+    //   check :false
+    // };
     this.handleChange = this.handleChange.bind(this);
-    console.log('constructor '+ this.state.check);
-    if(sessionStorage.getItem('check')==null)
-    sessionStorage.setItem('check', '');
+    // console.log('constructor '+ this.state.check);
+    switch (sessionStorage.getItem('check')) {
+      case null:
+        sessionStorage.setItem('check', '');
+        this.state = {activeLanguage:Dictionary("en")};
+        break;
+      case '':
+      this.state = {activeLanguage:Dictionary("en")};
+        break;
+      case 'true':
+      this.state = {activeLanguage:Dictionary("ru")};
+        break;
+      default:
+        sessionStorage.setItem('check', '');
+        this.state = {activeLanguage:Dictionary("en")};
+    }
   }
   handleChange(event){
   //   console.log('handleChange '+ event.target.checked);
@@ -32,16 +45,18 @@ class App extends React.Component{
   // }
   if(event.target.checked==true){
     sessionStorage.setItem('check', 'true');
+    this.setState({activeLanguage:Dictionary("ru")});
   } else {
     sessionStorage.setItem('check', '');
+    this.setState({activeLanguage:Dictionary("en")});
   }
   }
   render() {
     return (
 <Router>
       <Routes>
-        <Route path="/" exact element={<LogInPage check={this.state.check} handleChange={this.handleChange}/>}/>
-        <Route path="/RegistrationPage" exact element={<RegistrationPage check={this.state.check} handleChange={this.handleChange}/>}/>
+        <Route path="/" exact element={<LogInPage activeLanguage={this.state.activeLanguage} handleChange={this.handleChange}/>}/>
+        <Route path="/RegistrationPage" exact element={<RegistrationPage activeLanguage={this.state.activeLanguage} handleChange={this.handleChange}/>}/>
      </Routes>
 </Router>
 

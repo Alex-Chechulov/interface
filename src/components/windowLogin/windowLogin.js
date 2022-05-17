@@ -32,29 +32,28 @@ class WindowLogin extends React.Component{
   render() {
     return (
 <div className="login-window">
-<p className="login-window-caption">Authorization</p>
+<p className="login-window-caption">{this.props.activeLanguage.authorization}</p>
 <form className="login-form-input" onSubmit={this.handleSubmit}>
     <input
         type="login"
         value={this.state.login}
         name="login"
-        placeholder="Login"
+        placeholder={this.props.activeLanguage.login}
         className="input-login"
         onChange={this.loginChange}/>
     <input
         type="password"
         value={this.state.password}
         name="password"
-        placeholder="Password"
+        placeholder={this.props.activeLanguage.password}
         className="input-password"
         onChange={this.passwordChange}/>
     <label>
-    <p className={this.state.errorClass}>Incorrect username or password</p>
-    <a className="create-account-link" href="RegistrationPage">Create account</a>
+    <p className={this.state.errorClass}>{this.props.activeLanguage.errorLogin}</p>
+    <a className="create-account-link" href="RegistrationPage">{this.props.activeLanguage.createAccount}</a>
     </label>
-    <button type="submit" className="login-button">Log in</button>
+    <button type="submit" className="login-button">{this.props.activeLanguage.logIn}</button>
 </form>
-<p>{String(this.props.check)}</p>
 </div>
     );
   }

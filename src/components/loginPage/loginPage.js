@@ -9,9 +9,9 @@ class LogInPage extends React.Component{
     return (
 <div className="login-main">
 <Header />
-<AdditInfo check={this.props.check}
+<AdditInfo activeLanguage={this.props.activeLanguage}
 handleChange={this.props.handleChange}/>
-<WindowLogin check={this.props.check}/>
+<WindowLogin activeLanguage={this.props.activeLanguage}/>
 </div>
     );
   }

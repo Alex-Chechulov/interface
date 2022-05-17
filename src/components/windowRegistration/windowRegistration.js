@@ -35,36 +35,35 @@ class WindowRegistration extends React.Component{
   render() {
     return (
 <div className="registration-window">
-<p className="registration-window-caption">Create account</p>
+<p className="registration-window-caption">{this.props.activeLanguage.createAccount}</p>
 <form className="registration-form-input" onSubmit={this.handleSubmit}>
     <input
         type="login"
         value={this.state.login}
         name="login"
-        placeholder="Login"
+        placeholder={this.props.activeLanguage.login}
         className="input-login"
         onChange={this.loginChange}/>
     <input
         type="password"
         value={this.state.password}
         name="password"
-        placeholder="Password"
+        placeholder={this.props.activeLanguage.password}
         className="input-password"
         onChange={this.passwordChange}/>
     <input
         type="password"
         value={this.state.confirmPasswordChange}
         name="сonfirm password"
-        placeholder="Confirm"
+        placeholder={this.props.activeLanguage.confimPassword}
         className="input-password"
         onChange={this.confirmPasswordChange}/>
     <label>
-    <p className={this.state.errorClass}>Passwords do not match</p>
-    <a className="authorization-link" href="javascript:history.go(-1)">Authorization</a>
+    <p className={this.state.errorClass}>{this.props.activeLanguage.errorRegistrstion}</p>
+    <a className="authorization-link" href="javascript:history.go(-1)">{this.props.activeLanguage.authorization}</a>
     </label>
-    <button type="submit" className="registration-button">Registration</button>
+    <button type="submit" className="registration-button">{this.props.activeLanguage.registration}</button>
 </form>
-<p>{String(this.props.check)}</p>
 </div>
     );
   }

@@ -35,7 +35,7 @@ timeInUTC(){
 <div className="main-addit">
 <div className="clockBody">
 <div className="app clockBody">
-  <h1 className="heading">Time in format UTC:</h1>
+  <h1 className="heading">{this.props.activeLanguage.timeInFormatUTC}</h1>
   <div className="outer-wrapper">
     <div className="inner-wrapper">
       <h2 className="clock">
