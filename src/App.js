@@ -10,11 +10,7 @@ import Dictionary from "./dictionary";
 class App extends React.Component{
   constructor(props){
     super(props);
-    // this.state = {
-    //   check :false
-    // };
     this.handleChange = this.handleChange.bind(this);
-    // console.log('constructor '+ this.state.check);
     switch (sessionStorage.getItem('check')) {
       case null:
         sessionStorage.setItem('check', '');
@@ -32,17 +28,6 @@ class App extends React.Component{
     }
   }
   handleChange(event){
-  //   console.log('handleChange '+ event.target.checked);
-  //   if(event.target.checked==true){
-  //   this.setState({
-  //     check:true
-  //   });
-  // }
-  //   else {
-  //   this.setState({
-  //     check:false
-  //   });
-  // }
   if(event.target.checked==true){
     sessionStorage.setItem('check', 'true');
     this.setState({activeLanguage:Dictionary("ru")});
@@ -55,8 +40,14 @@ class App extends React.Component{
     return (
 <Router>
       <Routes>
-        <Route path="/" exact element={<LogInPage activeLanguage={this.state.activeLanguage} handleChange={this.handleChange}/>}/>
-        <Route path="/RegistrationPage" exact element={<RegistrationPage activeLanguage={this.state.activeLanguage} handleChange={this.handleChange}/>}/>
+        <Route path="/" exact element=
+            {<LogInPage
+              activeLanguage={this.state.activeLanguage}
+              handleChange={this.handleChange}/>}/>
+        <Route path="/RegistrationPage" exact element=
+            {<RegistrationPage
+              activeLanguage={this.state.activeLanguage}
+              handleChange={this.handleChange}/>}/>
      </Routes>
 </Router>
 

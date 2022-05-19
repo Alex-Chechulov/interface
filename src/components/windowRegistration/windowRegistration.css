@@ -35,14 +35,14 @@
   padding-left: 2.3em;
 }
  .registration-form-input input[name="login"]{/*ввод логина*/
-   background: #FFFFFF url("../../../public/log-in-icon.svg") no-repeat 2% 50%;
+   background: #FFFFFF url("/log-in-icon.svg") no-repeat 2% 50%;
    margin-bottom: 1em;
 }
 .registration-form-input input[name="password"]{/*ввод пароля*/
   margin-bottom: 1em;
 }
 .registration-form-input input[type="password"]{/*ввод пароля*/
-  background: #FFFFFF url("../../../public/pass-in-icon.svg") no-repeat 4% 40%;
+  background: #FFFFFF url("/pass-in-icon.svg") no-repeat 4% 40%;
 }
 .registration-error-input{/*ошибка данных*/
   font-weight: 400;

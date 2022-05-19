@@ -1,5 +1,6 @@
 import React from "react";
 import './windowRegistration.css';
+import axios from "axios";
 class WindowRegistration extends React.Component{
   constructor(props) {
     super(props);
