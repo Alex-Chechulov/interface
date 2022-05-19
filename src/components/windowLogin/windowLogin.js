@@ -1,5 +1,6 @@
 import React from "react";
 import './windowLogin.css';
+import axios from "axios";
 class WindowLogin extends React.Component{
   constructor(props) {
     super(props);
@@ -15,18 +16,51 @@ class WindowLogin extends React.Component{
   passwordChange(event) {
     this.setState({password: event.target.value});
   }
+  // static async login(username, password) {
+  //       const body = new FormData();
+  //       body.append('username', username)
+  //       body.append('password', password)
+  //       const response = await API({
+  //           method: 'post',
+  //           url: 'user/login/',
+  //           data: body,
+  //           headers: {
+  //               'Content-Type': multipart/form-data,
+  //           },
+  //       });
+  //       return response
+  //   }
   handleSubmit(event) {
-    // alert('login: ' + this.state.login);
-    // alert('password: ' + this.state.password);
+    const body = new FormData();
+    body.append('username', this.state.login);
+    body.append('password', this.state.password);
+    axios({
+      method: 'POST',
+      url: 'http://10.0.25.63:8000/api/user/login/',
+      data: body,
+      headers: {
+          'Content-Type': `multipart/form-data; boundary=${body._boundary}`,
+           },
+    })
+    .then((response) => {
+      this.setState({errorClass: 'login-error-input login-error-hidden'});
+      alert('Login sucsess!');
+      console.log(response);
+    })
+    .catch((error) =>{
+      this.setState({errorClass: 'login-error-input'});
+      console.error(error);
+    });
 
-  // if (this.state.login=="admin"&&this.state.password=="admin"){
-    if(localStorage.getItem(this.state.login)==this.state.password){
-    this.setState({errorClass: 'login-error-input login-error-hidden'});
-    alert('Login sucsess!');
-    // localStorage.clear();
-  }  else {
-    this.setState({errorClass: 'login-error-input'});
-  }
+
+
+  //   if(localStorage.getItem(this.state.login)==this.state.password){
+  //   this.setState({errorClass: 'login-error-input login-error-hidden'});
+  //   alert('Login sucsess!');
+  //   // localStorage.clear();
+  // }  else {
+  //   this.setState({errorClass: 'login-error-input'});
+  // }
     event.preventDefault();
   }
   render() {
