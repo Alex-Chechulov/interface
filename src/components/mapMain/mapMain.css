@@ -1,0 +1,59 @@
+.map-main{     /*шапка*/
+  text-align: center;
+  width: 70%;
+  height: 60vh;
+  margin-top: 100px;
+  margin-left: 13%;
+  background: #B4F5F9;
+  display: inline-block;
+  overflow:scroll;
+}
+@media screen and (max-width: 1300px){/*настройка для отображения на тетефоне*/
+  .map-main {/*окно*/
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+}
+.map-img{
+  position: relative;
+  width: 1440px;
+  height: 954px;
+  background: white url("/mainMap.svg") no-repeat;
+  background-size: 1440px 954px;
+}
+.point{
+  position:absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+}
+.point#one{
+left:730px;
+top:300px;
+}
+.point#two{
+left:690px;
+top:510px;
+}
+.point#three{
+left:970px;
+top:470px;
+}
+.point#four{
+left:960px;
+top:760px;
+}
+.point:hover::after {
+ content: attr(data-title);
+ position: absolute;
+ left: -100px;
+ bottom:100%;
+ z-index: 1;
+ background: rgba(187,187,187,0.7);
+ font-family: Arial, sans-serif;
+ font-size: 14px;
+ padding: 5px 10px;
+ width: 200px;
+}

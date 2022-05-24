@@ -1,6 +1,9 @@
 import React from "react";
 import './windowLogin.css';
+
+import cogoToast from 'cogo-toast';
 import axios from "axios";
+
 class WindowLogin extends React.Component{
   constructor(props) {
     super(props);
@@ -44,11 +47,15 @@ class WindowLogin extends React.Component{
     })
     .then((response) => {
       this.setState({errorClass: 'login-error-input login-error-hidden'});
-      alert('Login sucsess!');
+      cogoToast.success("Success Login!");
+      // this.props.history.go('/MainPage');
+      //document.location.href = "/MainPage";
+      setTimeout(() => {  document.location.href = "/MainPage"; }, 1000);
       console.log(response);
     })
     .catch((error) =>{
       this.setState({errorClass: 'login-error-input'});
+      cogoToast.error("Login failed!");
       console.error(error);
     });
 

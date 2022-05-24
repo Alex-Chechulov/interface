@@ -3,6 +3,7 @@ import React from "react";
 
 import LogInPage from "./components/loginPage/loginPage";
 import RegistrationPage from "./components/registrationPage/registrationPage";
+import MainPage from "./components/mainPage/mainPage";
 
 import {  BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Dictionary from "./dictionary";
@@ -48,6 +49,10 @@ class App extends React.Component{
             {<RegistrationPage
               activeLanguage={this.state.activeLanguage}
               handleChange={this.handleChange}/>}/>
+              <Route path="/MainPage" exact element=
+                  {<MainPage
+                    activeLanguage={this.state.activeLanguage}
+                    handleChange={this.handleChange}/>}/>
      </Routes>
 </Router>
 
