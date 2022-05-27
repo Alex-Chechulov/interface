@@ -1,0 +1,52 @@
+.error-main {/*фон*/
+  background: white no-repeat;
+  min-height: 100vh;
+  min-width: 400px;
+background-size: cover;
+}
+.head-title{
+  font-size: 5vh;
+  text-align: center;
+  font-family: 'Rokkitt';
+  font-style: normal;
+}
+.lettering-404{
+  font-size: 40vh;
+  text-align: center;
+  color: #8D2222;
+  font-family: 'Roboto';
+  font-style: normal;
+}
+.text{
+  display: inline-block;
+  text-align: left;
+  width: 60%;
+}
+.text div{
+  font-size: 40%;
+}
+
+.return-button{/*кнопка логина*/
+  width: 30%;
+  height: 2em;
+  background: #9E5DE0;
+  border-radius: 10px;
+  border: 0;
+
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5vh;
+  line-height: 57px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 0px #3c354a;
+  position: relative;
+}
+.return-button:active{/*нажатие кнопки*/
+  top:2px;
+  box-shadow: 0 3px 0px #3c354a;
+}
